@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+</html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <meta name="author" content="zhy" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/layout.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/index.css">
+    <title></title>
+    <!--[if lte IE 9]>
+    <script src=./js/bootstrap/respond.min.js"></script>
+    <script src=./js/bootstrap/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="nav">
+        <ul class="nav_content clearfix" role="tablist">
+            <li role="presentation" class="active nav_link_item">
+                <a href="#charge" class="topLink" aria-controls="charge" role="tab" data-toggle="tab">收费管理</a>
+            </li>
+            <span class="line">|</span>
+            <li role="presentation" class="nav_link_item">
+                <a href="#analysis" class="topLink" aria-controls="analysis" role="tab" data-toggle="tab">统计分析</a>
+            </li>
+        </ul>
+    </div>
+    <div class="tab-content">
+        <div id="charge" class="tab-pane active fade in ">
+            <div class="slide">
+                <ul class="slide_ul" role="tablist">
+                    <li role="presentation" class="active slide_link_item">
+                        <a href="#prestore" class="topLink" aria-controls="prestore" data-toggle="tab">预存销账</a>
+                    </li>
+                    <li role="presentation" class="slide_link_item">
+                        <a href="#chargeRecond" class="topLink" aria-controls="chargeRecond" data-toggle="tab">收费记录</a>
+                    </li>
+                    <li role="presentation" class="slide_link_item">
+                        <a href="#prestoreRecond" class="topLink" aria-controls="prestoreRecond" data-toggle="tab">预存记录</a>
+                    </li>
+                    <li role="presentation" class="slide_link_item">
+                        <a href="#cancelRecond" class="topLink" aria-controls="cancelRecond" data-toggle="tab">取消收费记录</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="content">
+                <div id="prestore" class="tab-pane fade in active">
+                    <div class="container-fluid">
+                        <div class="row topBar">
+                            <div class="col-md-5">
+                                <form class="form-inline">
+                                    <div class="form-group">
+                                        <label for="invoice">用户编号：</label>
+                                        <input type="text" class="form-control" id="uid" placeholder="用户编号">
+                                    </div>
+                                    <button type="button" class="btn btn-primary">搜索</button>
+                                </form>
+                            </div>
+                            <div class="col-md-4">
+                                <form class="form-inline">
+                                    <div class="form-group">
+                                        <label for="invoice">发票号：</label>
+                                        <input type="text" class="form-control" id="invoice" placeholder="请输入发票号">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-md-3">
+                                <form class="form-inline">
+                                    <div class="form-group">
+                                        <label for="invoice">预存方式：</label>
+                                        <select class="form-control">
+                                            <option>银行转账</option>
+                                            <option>微信支付</option>
+                                            <option>现金预存</option>
+                                        </select>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="row" style="border-bottom:1px solid #e4e4e4">
+                            <div class="col-md-8 rightBar">
+                                <div class="row">
+                                    <div class="col-md-12 basic">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="basicInfo">用户基本信息</h4>
+                                            </div>
+                                            <div class="panel-body">
+                                                <ul class="list-group">
+                                                    <li class="list-group-item">
+                                                        <b class="title">用户名称：</b>
+                                                        <span class="text">绵阳市丰名个体户</span>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <b class="title">用户地址：</b>
+                                                        <span class="text">绵阳市高新区128号</span>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <b class="title">账户余额：</b>
+                                                        <span class="text red">231.00</span>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <b class="title">停水状态：</b>
+                                                        <span class="text">正常</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 basic">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="chargeInfo">费用明细信息</h4>
+                                            </div>
+                                            <div class="panel-body">
+                                                <table class="table table-bordered table-hover table-condensed=-">
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox" value="">
+                                                        </td>
+                                                        <td>年度</td>
+                                                        <td>月份</td>
+                                                        <td>水量</td>
+                                                        <td>计费金额</td>
+                                                        <td>违约金</td>
+                                                        <td>应收金额</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox" value="">
+                                                        </td>
+                                                        <td>2017</td>
+                                                        <td>4</td>
+                                                        <td>21</td>
+                                                        <td>43</td>
+                                                        <td>1</td>
+                                                        <td>323</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox" value="">
+                                                        </td>
+                                                        <td>2017</td>
+                                                        <td>4</td>
+                                                        <td>21</td>
+                                                        <td>43</td>
+                                                        <td>1</td>
+                                                        <td>323</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox" value="">
+                                                        </td>
+                                                        <td>2017</td>
+                                                        <td>4</td>
+                                                        <td>21</td>
+                                                        <td>43</td>
+                                                        <td>1</td>
+                                                        <td>323</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 basic">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="totalInfo">费用汇总信息</h4>
+                                            </div>
+                                            <div class="panel-body">
+                                                <div class="row">
+                                                    <div class="col-md-6 textLeft">
+                                                        <b class="title">欠费合计:</b>
+                                                        <span class="text">154.00</span>
+                                                    </div>
+                                                    <div class="col-md-6 textLeft">
+                                                        <b class="title">应收金额:</b>
+                                                        <span class="text red">164.00</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row receipts">
+                                                    <div class="col-md-6 textLeft">
+                                                        <form class="form-inline">
+                                                            <div class="form-group">
+                                                                <label for="receipts" class="title">实收金额：</label>
+                                                                <input type="text" class="form-control red" id="receipts" placeholder="实收金额">
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <div class="col-md-6 textLeft">
+                                                        <button type="button" class="btn btn-primary">收费</button>
+                                                        <button type="button" class="btn btn-success">打印</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 basic" style="border:none;">
+                                        <div class="chartRow">
+                                            <div class="chartDiv">
+                                                <h4>预存信息</h4>
+                                                <canvas id="restoreChart" width="400" height="400"></canvas>
+                                            </div>
+                                            <div class="chartDiv">
+                                                <h4>水费信息</h4>
+                                                <canvas id="waterRentChart" width="400" height="400"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 leftBar">
+                                <div class="row">
+                                    <div class="col-md-12 basic">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4>预存记录</h4>
+                                            </div>
+                                            <div class="panel-body ReTable">
+                                                <table class="table table-bordered table-hover table-condensed">
+                                                    <thead style="display:block;overflow-y: scroll;"> 
+                                                    <tr>
+                                                        <th>用户名称</td>
+                                                        <th>预存金额</td>
+                                                        <th>时间</td>
+                                                    </tr>
+                                                    </thead> 
+                                                    <tbody class="Htbody"> 
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    </tbody> 
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 basic" style="border:none;">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4>水费记录</h4>
+                                            </div>
+                                            <div class="panel-body ReTable">
+                                                <table class="table table-bordered table-hover table-condensed">
+                                                    <thead style="display:block;overflow-y: scroll;"> 
+                                                    <tr>
+                                                        <th>用户名称</td>
+                                                        <th>预存金额</td>
+                                                        <th>时间</td>
+                                                    </tr>
+                                                    </thead> 
+                                                    <tbody class="Htbody"> 
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    </tbody> 
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="chargeRecond" class="tab-pane fade">
+                    收费记录
+                </div>
+                <div id="prestoreRecond" class="tab-pane fade">
+                    预存记录
+                </div>
+                <div id="cancelRecond" class="tab-pane fade">
+                    取消收费记录
+                </div>
+            </div>
+        </div>
+        <div id="analysis" role="tabpanel" class="tab-pane fade">
+            <div class="slide">
+                <ul class="slide_ul" role="tablist">
+                    <li role="presentation" class="active slide_link_item">
+                        <a href="#chargePaper" class="topLink" aria-controls="chargePaper" data-toggle="tab">收费日报</a>
+                    </li>
+                    <li role="presentation" class="slide_link_item">
+                        <a href="#prestoreAnalysis" class="topLink" aria-controls="prestoreAnalysis" data-toggle="tab">预存统计</a>
+                    </li>
+                    <li role="presentation" class="slide_link_item">
+                        <a href="#receiveAnalysis" class="topLink" aria-controls="receiveAnalysis" data-toggle="tab">应收统计</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="content">
+                <div id="chargePaper" class="tab-pane fade in active">
+                    <div class="row">
+                        <div class="col-md-4">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div id="prestoreAnalysis" class="tab-pane fade">
+                    预存统计
+                </div>
+                <div id="receiveAnalysis" class="tab-pane fade">
+                    应收统计
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script type="text/javascript" src="./js/jquery.min.js"></script>
+<script type="text/javascript" src="./js/chart.js"></script>
+<script type="text/javascript" src="./js/bootstrap.min.js"></script>	
+<script type="text/javascript" src="./js/index.js"></script>
+
+</html>

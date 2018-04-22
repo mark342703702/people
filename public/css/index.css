@@ -1,0 +1,82 @@
+#prestore .topBar {
+  padding: 10px 0px;
+  border-bottom: 4px solid #e4e4e4; }
+
+#prestore .rightBar {
+  border-right: 4px solid #e4e4e4; }
+  #prestore .rightBar .basicInfo {
+    background: url("/images/basic.png") no-repeat 0px center;
+    box-sizing: border-box;
+    padding-left: 20px; }
+  #prestore .rightBar .chargeInfo {
+    background: url("/images/charge.png") no-repeat 0px center;
+    box-sizing: border-box;
+    padding-left: 20px; }
+  #prestore .rightBar .totalInfo {
+    background: url("/images/total.png") no-repeat 0px center;
+    box-sizing: border-box;
+    padding-left: 20px; }
+
+#prestore .basic {
+  padding-top: 10px;
+  border-bottom: 1px solid #e4e4e4; }
+  #prestore .basic .list-group-item {
+    border: none;
+    text-align: left;
+    width: 50%;
+    float: left;
+    padding: 5px 8px; }
+  #prestore .basic .receipts {
+    margin-top: 15px; }
+  #prestore .basic td {
+    padding: 4px; }
+  #prestore .basic .panel {
+    margin-bottom: 15px; }
+  #prestore .basic .Htbody {
+    display: block;
+    max-height: 310px;
+    overflow-y: scroll; }
+
+#prestore .chartRow {
+  justify-content: space-around;
+  height: 308px;
+  width: 100%;
+  display: flex;
+  flex-direction: row; }
+  #prestore .chartRow .chartDiv {
+    height: 250px;
+    width: 250px; }
+
+.panel-heading {
+  text-align: left;
+  padding: 2px 10px; }
+
+h4 {
+  font-weight: bold; }
+
+.title {
+  font-size: 20px; }
+
+.text {
+  font-size: 20px; }
+
+.title_16 {
+  font-size: 16px; }
+
+.text_16 {
+  font-size: 16px; }
+
+#receipts {
+  width: 200px; }
+
+.textLeft {
+  text-align: left; }
+
+canvas {
+  margin-bottom: 20px; }
+
+.red {
+  color: #FF0000; }
+
+.table {
+  margin-bottom: 10px; }
