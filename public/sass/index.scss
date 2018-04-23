@@ -1,14 +1,12 @@
 #prestore{
-
     // border-bottom: 4px solid #e4e4e4;
-    
     .topBar{
         padding: 10px 0px;
         border-bottom: 4px solid #e4e4e4;
     }
 
     .rightBar{
-        border-right: 4px solid #e4e4e4;
+        // border-right: 4px solid #e4e4e4;
 
         .basicInfo{
             background: url('/images/basic.png') no-repeat 0px center;
@@ -29,9 +27,22 @@
         }
     }
 
+    .leftBar{
+
+        .empty_link{
+
+            float:right;
+            margin:9px 23px 0px 0px;
+            display: block;
+
+            &:hover{
+                text-decoration: underline!important;
+            }
+        }
+    }
+
     .basic{
         padding-top: 10px;
-        border-bottom: 1px solid #e4e4e4;
 
         .list-group-item{
             border: none;
@@ -45,10 +56,6 @@
             margin-top: 15px;
         }
 
-        td{
-            padding: 4px;
-        }
-
         .panel{
             margin-bottom: 15px;
         }
@@ -56,7 +63,15 @@
         .Htbody{
             display:block; 
             max-height:310px;
-            overflow-y: scroll;
+            overflow-y: auto;
+            position: relative;
+        }
+        
+        .Ctbody{
+            display:block; 
+            max-height:286px;
+            overflow-y: auto;
+            position: relative;
         }
     }
 
@@ -65,7 +80,7 @@
         height: 308px;
         width:100%;
         display: flex;
-        flex-direction:row ;
+        flex-direction:row;
 
         .chartDiv{
             height: 250px;
@@ -118,4 +133,8 @@ canvas{
 
 .table{
     margin-bottom: 10px;
+}
+
+th{
+    text-align: center;
 }

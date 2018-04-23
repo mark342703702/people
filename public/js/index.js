@@ -52,11 +52,17 @@ $(function(){
 
     });
 
-    var _width=$('.ReTable').width(); 
-    $('.ReTable th:first-child').width(_width*0.3); 
+    var _width=$('.ReTable').width();
     $('.ReTable td:first-child').width(_width*0.3);
-    $('.ReTable th:nth-child(2)').width(_width*0.3); 
     $('.ReTable td:nth-child(2)').width(_width*0.3);
-    $('.ReTable th:nth-child(3)').width(_width*0.4); 
     $('.ReTable td:nth-child(3)').width(_width*0.4);
+
+    var c_width=$('.ChargeTable').width();
+    $('.ChargeTable td:first-child').width(c_width*0.1);
+    $('.ChargeTable td:nth-child(2)').width(c_width*0.2);
+    $('.ChargeTable td:nth-child(3)').width(c_width*0.1);
+    $('.ChargeTable td:nth-child(4)').width(c_width*0.15);
+    $('.ChargeTable td:nth-child(5)').width(c_width*0.2);
+    $('.ChargeTable td:nth-child(6)').width(c_width*0.15);
+    $('.ChargeTable td:nth-child(7)').width(c_width*0.2);
 })

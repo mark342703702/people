@@ -59,4 +59,5 @@ $(function(){
     $('.ReTable td:nth-child(2)').width(_width*0.3);
     $('.ReTable th:nth-child(3)').width(_width*0.4); 
     $('.ReTable td:nth-child(3)').width(_width*0.4);
+    
 })

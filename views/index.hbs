@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
-</html>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -62,15 +59,16 @@
                                     <button type="button" class="btn btn-primary">搜索</button>
                                 </form>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-5">
                                 <form class="form-inline">
                                     <div class="form-group">
                                         <label for="invoice">发票号：</label>
                                         <input type="text" class="form-control" id="invoice" placeholder="请输入发票号">
+                                        <button type="button" class="btn btn-primary">设置</button>
                                     </div>
                                 </form>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-2">
                                 <form class="form-inline">
                                     <div class="form-group">
                                         <label for="invoice">预存方式：</label>
@@ -83,7 +81,7 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="row" style="border-bottom:1px solid #e4e4e4">
+                        <div class="row">
                             <div class="col-md-8 rightBar">
                                 <div class="row">
                                     <div class="col-md-12 basic">
@@ -120,8 +118,9 @@
                                             <div class="panel-heading">
                                                 <h4 class="chargeInfo">费用明细信息</h4>
                                             </div>
-                                            <div class="panel-body">
+                                            <div class="panel-body ChargeTable">
                                                 <table class="table table-bordered table-hover table-condensed">
+                                                    <tbody class="Ctbody">
                                                     <tr>
                                                         <td>
                                                             <input type="checkbox" value="">
@@ -166,6 +165,84 @@
                                                         <td>1</td>
                                                         <td>323</td>
                                                     </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox" value="">
+                                                        </td>
+                                                        <td>2017</td>
+                                                        <td>4</td>
+                                                        <td>21</td>
+                                                        <td>43</td>
+                                                        <td>1</td>
+                                                        <td>323</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox" value="">
+                                                        </td>
+                                                        <td>2017</td>
+                                                        <td>4</td>
+                                                        <td>21</td>
+                                                        <td>43</td>
+                                                        <td>1</td>
+                                                        <td>323</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox" value="">
+                                                        </td>
+                                                        <td>2017</td>
+                                                        <td>4</td>
+                                                        <td>21</td>
+                                                        <td>43</td>
+                                                        <td>1</td>
+                                                        <td>323</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox" value="">
+                                                        </td>
+                                                        <td>2017</td>
+                                                        <td>4</td>
+                                                        <td>21</td>
+                                                        <td>43</td>
+                                                        <td>1</td>
+                                                        <td>323</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox" value="">
+                                                        </td>
+                                                        <td>2017</td>
+                                                        <td>4</td>
+                                                        <td>21</td>
+                                                        <td>43</td>
+                                                        <td>1</td>
+                                                        <td>323</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox" value="">
+                                                        </td>
+                                                        <td>2017</td>
+                                                        <td>4</td>
+                                                        <td>21</td>
+                                                        <td>43</td>
+                                                        <td>1</td>
+                                                        <td>323</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="checkbox" value="">
+                                                        </td>
+                                                        <td>2017</td>
+                                                        <td>4</td>
+                                                        <td>21</td>
+                                                        <td>43</td>
+                                                        <td>1</td>
+                                                        <td>323</td>
+                                                    </tr>
+                                                    </tbody>
                                                 </table>
                                             </div>
                                         </div>
@@ -206,9 +283,101 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="col-md-4 leftBar">
                                 <div class="row">
+                                    <div class="col-md-12 basic" style="border:none;margin-bottom:20px;">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <div class="row clearfix">
+                                                    <h4 style="float:left;margin-left:15px;">预存记录</h4>
+                                                    <a href="javascript:;" class="empty_link">清空</a>
+                                                </div>
+                                            </div>
+                                            <div class="panel-body ReTable">
+                                                <table class="table table-bordered table-hover table-condensed">
+                                                    <tbody class="Htbody">
+                                                    <tr>
+                                                        <th>用户名称</th>
+                                                        <th>预存金额</th>
+                                                        <th>时间</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>黄海</td>
+                                                        <td>42</td>
+                                                        <td>2017-12-12</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>合计</td>
+                                                        <td colspan="2">4232</td>
+                                                    </tr> 
+                                                    </tbody> 
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="col-md-12 basic" style="border:none;">
-                                        <div class="chartRow">
+                                       <div class="chartRow">
                                             <div class="chartDiv">
                                                 <h4>预存信息</h4>
                                                 <canvas id="restoreChart" width="400" height="400"></canvas>
@@ -216,180 +385,6 @@
                                             <div class="chartDiv">
                                                 <h4>水费信息</h4>
                                                 <canvas id="waterRentChart" width="400" height="400"></canvas>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 leftBar">
-                                <div class="row">
-                                    <div class="col-md-12 basic">
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h4>预存记录</h4>
-                                            </div>
-                                            <div class="panel-body ReTable">
-                                                <table class="table table-bordered table-hover table-condensed">
-                                                    <thead style="display:block;overflow-y: scroll;"> 
-                                                    <tr>
-                                                        <th>用户名称</td>
-                                                        <th>预存金额</td>
-                                                        <th>时间</td>
-                                                    </tr>
-                                                    </thead> 
-                                                    <tbody class="Htbody"> 
-                                                    <tr>
-                                                        <td>黄海</td>
-                                                        <td>42</td>
-                                                        <td>2017-12-12</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>黄海</td>
-                                                        <td>42</td>
-                                                        <td>2017-12-12</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>黄海</td>
-                                                        <td>42</td>
-                                                        <td>2017-12-12</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>黄海</td>
-                                                        <td>42</td>
-                                                        <td>2017-12-12</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>黄海</td>
-                                                        <td>42</td>
-                                                        <td>2017-12-12</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>黄海</td>
-                                                        <td>42</td>
-                                                        <td>2017-12-12</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>黄海</td>
-                                                        <td>42</td>
-                                                        <td>2017-12-12</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>黄海</td>
-                                                        <td>42</td>
-                                                        <td>2017-12-12</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>黄海</td>
-                                                        <td>42</td>
-                                                        <td>2017-12-12</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>黄海</td>
-                                                        <td>42</td>
-                                                        <td>2017-12-12</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>黄海</td>
-                                                        <td>42</td>
-                                                        <td>2017-12-12</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>黄海</td>
-                                                        <td>42</td>
-                                                        <td>2017-12-12</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>黄海</td>
-                                                        <td>42</td>
-                                                        <td>2017-12-12</td>
-                                                    </tr>
-                                                    </tbody> 
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 basic" style="border:none;">
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h4>水费记录</h4>
-                                            </div>
-                                            <div class="panel-body ReTable">
-                                                <table class="table table-bordered table-hover table-condensed">
-                                                    <thead style="display:block;overflow-y: scroll;"> 
-                                                    <tr>
-                                                        <th>用户名称</td>
-                                                        <th>预存金额</td>
-                                                        <th>时间</td>
-                                                    </tr>
-                                                    </thead> 
-                                                    <tbody class="Htbody"> 
-                                                    <tr>
-                                                        <td>黄海</td>
-                                                        <td>42</td>
-                                                        <td>2017-12-12</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>黄海</td>
-                                                        <td>42</td>
-                                                        <td>2017-12-12</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>黄海</td>
-                                                        <td>42</td>
-                                                        <td>2017-12-12</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>黄海</td>
-                                                        <td>42</td>
-                                                        <td>2017-12-12</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>黄海</td>
-                                                        <td>42</td>
-                                                        <td>2017-12-12</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>黄海</td>
-                                                        <td>42</td>
-                                                        <td>2017-12-12</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>黄海</td>
-                                                        <td>42</td>
-                                                        <td>2017-12-12</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>黄海</td>
-                                                        <td>42</td>
-                                                        <td>2017-12-12</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>黄海</td>
-                                                        <td>42</td>
-                                                        <td>2017-12-12</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>黄海</td>
-                                                        <td>42</td>
-                                                        <td>2017-12-12</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>黄海</td>
-                                                        <td>42</td>
-                                                        <td>2017-12-12</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>黄海</td>
-                                                        <td>42</td>
-                                                        <td>2017-12-12</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>黄海</td>
-                                                        <td>42</td>
-                                                        <td>2017-12-12</td>
-                                                    </tr>
-                                                    </tbody> 
-                                                </table>
                                             </div>
                                         </div>
                                     </div>
