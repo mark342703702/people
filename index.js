@@ -14,6 +14,10 @@ app.get('/', function (req, res) {
   res.render('index');
 });
 
+app.get('/login', function (req, res) {
+  res.render('login');
+});
+
 
 var server = app.listen(3000, function () {
   var host = server.address().address;

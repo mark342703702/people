@@ -1,5 +1,8 @@
 $(function(){
 
+    var userTpl = Handlebars.compile($("#userTpl").html());
+    $('#userData').html(userTpl());
+
     var reStoreCtx = $("#restoreChart");
     var waterCtx = $("#waterRentChart");
     var reStoreChart = new Chart(reStoreCtx, {
@@ -89,7 +92,6 @@ $(function(){
 
 
 
-
     $("#prestoreRecondDate1").jeDate({
         format: "YYYY-MM-DD"
     });
@@ -129,10 +131,6 @@ $(function(){
             console.log(num)
         }
     });
-
-
-
-
 
 
 })

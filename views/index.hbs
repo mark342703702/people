@@ -91,8 +91,8 @@
                                                 <div class="panel-heading">
                                                     <h4 class="basicInfo">用户基本信息</h4>
                                                 </div>
-                                                <div class="panel-body">
-                                                    <ul class="list-group">
+                                                <div class="panel-body" id="userData">
+                                                    {{!-- <ul class="list-group">
                                                         <li class="list-group-item">
                                                             <b class="title">用户名称：</b>
                                                             <span class="text">绵阳市丰名个体户</span>
@@ -109,7 +109,7 @@
                                                             <b class="title">停水状态：</b>
                                                             <span class="text">正常</span>
                                                         </li>
-                                                    </ul>
+                                                    </ul> --}}
                                                 </div>
                                             </div>
                                         </div>
@@ -680,7 +680,27 @@
 <script type="text/javascript" src="/js/chart.js"></script>
 <script type="text/javascript" src="/js/bootstrap.min.js"></script>	
 <script type="text/javascript" src="/js/jquery.jedate.js"></script>
+<script type="text/javascript" src="/js/handlebars-1.0.0.beta.6.js"></script>
 <script type="text/javascript" src="/js/jqPaginator.js"></script>
+<script type="text/x-handlebars-template" id="userTpl">
+    <ul class="list-group">
+        <li class="list-group-item">
+            <b class="title">用户名称：</b>
+            <span class="text">绵阳市丰名个体户</span>
+        </li>
+        <li class="list-group-item">
+            <b class="title">用户地址：</b>
+            <span class="text">绵阳市高新区128号</span>
+        </li>
+        <li class="list-group-item">
+            <b class="title">账户余额：</b>
+            <span class="text red">231.00</span>
+        </li>
+        <li class="list-group-item">
+            <b class="title">停水状态：</b>
+            <span class="text">正常</span>
+        </li>
+    </ul>
+</script>
 <script type="text/javascript" src="/js/index.js"></script>
-
 </html>
