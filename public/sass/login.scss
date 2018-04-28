@@ -1,5 +1,5 @@
 body{
-    background: url('/images/bk.jpg') no-repeat center top;
+    background: url('/images/bk.png') no-repeat center top;
 }
 
 .container{
@@ -8,6 +8,9 @@ body{
     background-image: url('/images/bk1.png');
     background-repeat:no-repeat;
     background-position: center;
+    padding-left: 0px;
+    padding-right: 0px;
+    position: relative;
 
     .header{
         width: 100%;
@@ -38,6 +41,40 @@ body{
     .login{
         width: 320px;
         height: 270px;
-        padding: 20 10px;
+        padding: 20px 10px;
+        background: #fff;
+        z-index: 100;
+        position: absolute;
+        right: 80px;
+        top: 360px;
+        display: flex;
+        flex-direction:column;
+        justify-content:flex-start;
+        align-items:center;
+
+        .login_title{
+            width: 100%;
+            font-size: 20px;
+            font-weight: 700;
+            height: 50px;
+            line-height: 50px;
+            font-style: normal;
+            color:rgb(102, 102, 102);
+            font-family: 黑体;
+            background: url('/images/logo.png') no-repeat 70px center;
+            box-sizing: border-box;
+            padding-left: 130px;
+            margin-bottom: 30px;
+        }
+
+        .login_form{
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0px 20px;
+
+            .btn{
+                width: 100%;
+            }
+        }
     }
 }

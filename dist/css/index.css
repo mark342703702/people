@@ -1,25 +1,27 @@
-#prestore .topBar {
-  padding: 10px 0px;
-  border-bottom: 4px solid #e4e4e4; }
+#prestore .rightBar .basicInfo {
+  background: url("../images/basic.png") no-repeat 0px center;
+  box-sizing: border-box;
+  padding-left: 20px; }
 
-#prestore .rightBar {
-  border-right: 4px solid #e4e4e4; }
-  #prestore .rightBar .basicInfo {
-    background: url("../images/basic.png") no-repeat 0px center;
-    box-sizing: border-box;
-    padding-left: 20px; }
-  #prestore .rightBar .chargeInfo {
-    background: url("../images/charge.png") no-repeat 0px center;
-    box-sizing: border-box;
-    padding-left: 20px; }
-  #prestore .rightBar .totalInfo {
-    background: url("../images/total.png") no-repeat 0px center;
-    box-sizing: border-box;
-    padding-left: 20px; }
+#prestore .rightBar .chargeInfo {
+  background: url("../images/charge.png") no-repeat 0px center;
+  box-sizing: border-box;
+  padding-left: 20px; }
+
+#prestore .rightBar .totalInfo {
+  background: url("../images/total.png") no-repeat 0px center;
+  box-sizing: border-box;
+  padding-left: 20px; }
+
+#prestore .leftBar .empty_link {
+  float: right;
+  margin: 9px 23px 0px 0px;
+  display: block; }
+  #prestore .leftBar .empty_link:hover {
+    text-decoration: underline !important; }
 
 #prestore .basic {
-  padding-top: 10px;
-  border-bottom: 1px solid #e4e4e4; }
+  padding-top: 10px; }
   #prestore .basic .list-group-item {
     border: none;
     text-align: left;
@@ -28,14 +30,18 @@
     padding: 5px 8px; }
   #prestore .basic .receipts {
     margin-top: 15px; }
-  #prestore .basic td {
-    padding: 4px; }
   #prestore .basic .panel {
     margin-bottom: 15px; }
   #prestore .basic .Htbody {
     display: block;
     max-height: 310px;
-    overflow-y: scroll; }
+    overflow-y: auto;
+    position: relative; }
+  #prestore .basic .Ctbody {
+    display: block;
+    max-height: 286px;
+    overflow-y: auto;
+    position: relative; }
 
 #prestore .chartRow {
   justify-content: space-around;
@@ -46,6 +52,37 @@
   #prestore .chartRow .chartDiv {
     height: 250px;
     width: 250px; }
+
+#chargeRecond .basic {
+  padding-top: 20px; }
+
+#chargePaper .basic {
+  padding-top: 20px; }
+
+#prestoreRecond .basic {
+  padding-top: 20px; }
+
+#cancelRecond .basic {
+  padding-top: 20px; }
+
+#prestoreAnalysis .basic {
+  padding-top: 20px; }
+
+#receiveAnalysis .basic {
+  padding-top: 20px; }
+
+.menu {
+  padding: 10px 0px 10px 20px;
+  border-bottom: 4px solid #e4e4e4;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box; }
+  .menu .menu_item {
+    flex: none;
+    margin-right: 30px; }
 
 .panel-heading {
   text-align: left;
@@ -80,3 +117,11 @@ canvas {
 
 .table {
   margin-bottom: 10px; }
+
+th {
+  text-align: center; }
+
+.pagination {
+  float: right; }
+  .pagination li {
+    float: left; }

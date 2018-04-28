@@ -2,6 +2,21 @@ $(function(){
 
     var userTpl = Handlebars.compile($("#userTpl").html());
     $('#userData').html(userTpl());
+    // $.getJSON("http://192.168.13.66:7778/InvokeNomalMethod?jsoncallback=?", {
+    //     typeName: 'ChargeBussiness',
+    //     fucName: 'GetUserWaterFee',
+    //     jsonParas: ''
+    // },
+    // function (data) {
+    //     var data = JSON.parse(data).UserData;
+    //     var user = {
+    //         'UserName' : data.UserName, //用户姓名
+    //         'UserAddress' : data.UserAddress, //用户地址
+    //         'StopTag' : data.StopTag, //停水标志
+    //         'UserBalance' : data.UserBalance //账户余额
+    //     }
+    //     $('#userData').html(userTpl(user));
+    // });
 
     var reStoreCtx = $("#restoreChart");
     var waterCtx = $("#waterRentChart");
@@ -130,6 +145,29 @@ $(function(){
         onPageChange: function (num, type) {
             console.log(num)
         }
+    });
+
+    $("#chargePaperDate1").jeDate({
+        format: "YYYY-MM-DD"
+    });
+    $("#chargePaperDate2").jeDate({
+        format: "YYYY-MM-DD"
+    });
+
+    $("#prestoreAnalysisDate1").jeDate({
+        format: "YYYY-MM-DD"
+    });
+    $("#prestoreAnalysisDate2").jeDate({
+        format: "YYYY-MM-DD"
+    });
+
+
+
+    $("#receiveAnalysisDate1").jeDate({
+        format: "YYYY-MM-DD"
+    });
+    $("#receiveAnalysisDate2").jeDate({
+        format: "YYYY-MM-DD"
     });
 
 

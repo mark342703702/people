@@ -1,10 +1,7 @@
 .nav {
   width: 100%;
   height: 60px;
-  background: #296685;
-  position: fixed;
-  top: 0px;
-  z-index: 999; }
+  background: #296685; }
   .nav .nav_content {
     height: 60px;
     margin: 0 auto;
@@ -37,7 +34,6 @@
       width: 1px; }
 
 .tab-content {
-  margin-top: 60px;
   margin-bottom: 50px;
   position: relative; }
   .tab-content .slide {
@@ -79,3 +75,27 @@
     .tab-content .content .tab-pane {
       display: none;
       text-align: center; }
+
+.jedateblue .daybox .arthead {
+  background-color: #0066cc !important; }
+
+.jedateblue .mainfoot .btnscon span {
+  background-color: #0066cc !important; }
+
+.jedateblue .daysul td.actdate, .jedateblue .daysul td.actdate:hover, .jedateblue .daysul td.actdate .lunar {
+  background-color: #0066cc !important; }
+
+.jedateblue .daysul td.other, .jedateblue .daysul td.other .nolunar, .jedateblue .daysul td.other .lunar {
+  color: #6d9add !important; }
+
+.jedateblue .ymsbox .ymcon td.actdate, .jedateblue .ymsbox .ymcon td.actdate:hover {
+  background-color: #0066cc !important; }
+
+.jedateblue .ymsbox .arthead {
+  background-color: #0066cc !important; }
+
+.jedateblue .daybox .arthead em:hover {
+  background-color: #6d9add !important; }
+
+.jedateblue .daybox .arthead .ymbtn:hover {
+  background-color: #6d9add !important; }
