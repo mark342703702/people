@@ -14,6 +14,7 @@
       height: 30px;
       float: left;
       display: block;
+      cursor: pointer;
       box-sizing: border-box;
       text-align: center; }
       .nav .nav_content .nav_link_item:hover {

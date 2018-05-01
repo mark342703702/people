@@ -125,3 +125,30 @@ th {
   float: right; }
   .pagination li {
     float: left; }
+
+.tabTitle{
+    font-size: 28px;
+    text-align: center;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.tabTime{
+    color: #000;
+    font-size: 16px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.tabMan{
+    color: #000;
+    font-size: 16px;
+    position: absolute;
+    top: 0px;
+    left: 15px;
+}
+
+td{
+  vertical-align:middle!important;
+}
