@@ -152,3 +152,24 @@ th {
 td{
   vertical-align:middle!important;
 }
+
+#table1{
+  display: block;
+  overflow-y: auto;
+  max-height: 600px;
+  border: none;
+}
+
+#table2{
+  display: block;
+  overflow-y: auto;
+  max-height: 600px;
+  border: none;
+}
+
+#table3{
+  display: block;
+  overflow-y: auto;
+  max-height: 600px;
+  border: none;
+}

@@ -63,76 +63,8 @@
                             <button type="button" class="btn btn-primary">确定</button>
                         </div>
                     </div>
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="tabTitle col-md-12 basic">
-                                收费日报表
-                            </div>
-                            <div class="col-md-12 tabTime">
-                                收费日期：2018-04-01 至 2018-04-16<input type="button" value="打印" id="dayin"/>
-                                <span class="tabMan">收费员:黄海</span>
-                            </div>
-                            <div class="col-md-12">
-                                <table class="table table-striped table-bordered" id="table1">
-                                    <tr>
-                                       <th>所属分所</th>
-                                       <th>用水类别</th> 
-                                       <th>收费项目</th> 
-                                       <th>水量</th> 
-                                       <th>金额</th> 
-                                    </tr>
-                                    <tr>
-                                        <td>城区营业所</td>
-                                        <td>居民用水</td>
-                                        <td>基本水费</td>
-                                        <td>42423</td>
-                                        <td>342342</td>
-                                    </tr>
-                                    <tr>
-                                        <td>城区营业所</td>
-                                        <td>居民用水</td>
-                                        <td>基本水费</td>
-                                        <td>42423</td>
-                                        <td>342342</td>
-                                    </tr>
-                                    <tr>
-                                        <td>城区营业所</td>
-                                        <td>居民用水</td>
-                                        <td>基本水费</td>
-                                        <td>42423</td>
-                                        <td>342342</td>
-                                    </tr>
-                                    <tr>
-                                        <td>城区营业所</td>
-                                        <td>居民用水</td>
-                                        <td>小计</td>
-                                        <td>42423</td>
-                                        <td>342342</td>
-                                    </tr>
-                                    <tr>
-                                        <td>城区营业所</td>
-                                        <td>非居民用水</td>
-                                        <td>基本水费</td>
-                                        <td>42423</td>
-                                        <td>342342</td>
-                                    </tr>
-                                    <tr>
-                                        <td>城区营业所</td>
-                                        <td>非居民用水</td>
-                                        <td>污水处理费</td>
-                                        <td>42423</td>
-                                        <td>342342</td>
-                                    </tr>
-                                    <tr>
-                                        <td>城区营业所</td>
-                                        <td>非居民用水</td>
-                                        <td>小计</td>
-                                        <td>42423</td>
-                                        <td>342342</td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
+                    <div class="container-fluid" id="currentTable">
+                      
                     </div>
                 </div>
                 <div id="prestoreAnalysis" class="tab-pane fade">
@@ -151,35 +83,8 @@
                             <button type="button" class="btn btn-primary">确定</button>
                         </div>
                     </div>
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="tabTitle col-md-12 basic">
-                                预存收费日报表
-                            </div>
-                            <div class="col-md-12 tabTime">
-                                收费日期：2018-04-01 至 2018-04-16
-                            </div>
-                            <div class="col-md-12">
-                                <table class="table table-striped table-bordered table-hover">
-                                    <tr>
-                                       <th>所属公司</th>
-                                       <th>所属分所</th> 
-                                       <th>收费员</th> 
-                                       <th>预存金额</th> 
-                                       <th>预存扣费</th> 
-                                       <th>预存退费</th> 
-                                    </tr>
-                                    <tr>
-                                        <td>思源供水有限公司</td>
-                                        <td>城区营业所</td>
-                                        <td>校容</td>
-                                        <td>323</td>
-                                        <td>342</td>
-                                        <td>23</td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
+                    <div class="container-fluid" id="preChargeTable">
+                        
                     </div>
                 </div>
                 <div id="receiveAnalysis" class="tab-pane fade">
@@ -198,8 +103,8 @@
                             <button type="button" class="btn btn-primary">确定</button>
                         </div>
                     </div>
-                    <div class="container-fluid">
-                        <div class="row">
+                    <div class="container-fluid" id="shouldChargeTable">
+                        <!-- <div class="row">
                             <div class="tabTitle col-md-12 basic">
                                 收费员收费数据汇总统计表
                             </div>
@@ -244,7 +149,7 @@
                                     </tr>
                                 </table>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -260,175 +165,104 @@
 <script type="text/javascript" src="./js/jquery.jqprint-0.3.js"></script>
 <script type="text/javascript" src="./js/handlebars-1.0.0.beta.6.js"></script>
 <script type="text/javascript" src="./js/jqPaginator.js"></script>
-<script type="text/x-handlebars-template" id="userTpl">
-    <ul class="list-group">
-        <li class="list-group-item">
-            <b class="title">用户名称：</b>
-            <span class="text">{{UserName}}</span>
-        </li>
-        <li class="list-group-item">
-            <b class="title">用户地址：</b>
-            <span class="text">{{UserAddress}}</span>
-        </li>
-        <li class="list-group-item">
-            <b class="title">账户余额：</b>
-            <span class="text red">{{UserBalance}}</span>
-        </li>
-        <li class="list-group-item">
-            <b class="title">停水状态：</b>
-            <span class="text">{{UserBalance}}</span>
-        </li>
-    </ul>
-</script>
-<script type="text/x-handlebars-template" id="chargeInfoTpl">
-    <table class="table table-bordered table-hover table-condensed">
-        <tbody class="Ctbody">
-            <tr>
-                <th>
-                    <input type="checkbox" value="">
-                </th>
-                <th>年度</th>
-                <th>月份</th>
-                <th>水量</th>
-                <th>计费金额</th>
-                <th>违约金</th>
-                <th>应收金额</th>
-            </tr>
-            {{#each this}}
-            <tr>
-                <td>
-                    <input type="checkbox" value="">
-                </td>
-                <td>{{ComputeYear}}</td>
-                <td>{{ComputeMonth}}</td>
-                <td>{{WaterValue}}</td>
-                <td>{{ComputeFee}}</td>
-                <td>{{PenaltyFee}}</td>
-                <td>{{ShouldFee}}</td>
-            </tr>
-            {{/each}}
-        </tbody>
-    </table>
-</script>
-<script type="text/x-handlebars-template" id="totalInfoTpl">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="totalInfo">费用汇总信息</h4>
+<script type="text/x-handlebars-template" id="currentTableTpl">
+    <div class="row">
+        <div class="tabTitle col-md-12 basic">
+            收费日报表
         </div>
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-md-6 textLeft">
-                    <b class="title">欠费合计:</b>
-                    <span class="text">{{OwnFee}}</span>
-                </div>
-                <div class="col-md-6 textLeft">
-                    <b class="title">应收金额:</b>
-                    <span class="text red">{{shouldFeetotal}}</span>
-                </div>
-            </div>
-            <div class="row receipts">
-                <div class="col-md-6 textLeft">
-                    <form class="form-inline">
-                        <div class="form-group">
-                            <label for="receipts" class="title">实收金额：</label>
-                            <input type="text" class="form-control red" id="receipts" placeholder="实收金额">
-                        </div>
-                    </form>
-                </div>
-                <div class="col-md-6 textLeft">
-                    <button type="button" class="btn btn-primary">收费</button>
-                    <button type="button" class="btn btn-success">打印</button>
-                </div>
-            </div>
+        <div class="col-md-12 tabTime">
+            收费日期：2018-04-01 至 2018-04-16<input type="button" value="打印" id="dayin"/>
+            <span class="tabMan">收费员:黄海</span>
+        </div>
+        <div class="col-md-12">
+            <table class="table table-striped table-bordered" id="table1">
+                <tr>
+                   <th>所属分所</th>
+                   <th>用水类别</th> 
+                   <th>收费项目</th> 
+                   <th>水量</th> 
+                   <th>金额</th> 
+                </tr>
+                {{#each this}}
+                <tr>
+                    <td>{{location}}</td>
+                    <td>{{cate}}</td>
+                    <td>{{project}}</td>
+                    <td>{{water}}</td>
+                    <td>{{money}}</td>
+                </tr>
+                {{/each}}
+            </table>
         </div>
     </div>
 </script>
-<script type="text/x-handlebars-template" id="preRecondTpl">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <div class="row clearfix">
-                <h4 style="float:left;margin-left:15px;">预存记录</h4>
-                <a href="javascript:;" class="empty_link">清空</a>
-            </div>
+<script type="text/x-handlebars-template" id="preChargeTableTpl">
+    <div class="row">
+        <div class="tabTitle col-md-12 basic">
+            预存收费日报表
         </div>
-        <div class="panel-body ReTable">
-            <table class="table table-bordered table-hover table-condensed">
-                <tbody class="Htbody">
-                    <tr>
-                        <th>用户名称</th>
-                        <th>预存金额</th>
-                        <th>时间</th>
-                    </tr>
-                    <tr>
-                        <td>黄海</td>
-                        <td>42</td>
-                        <td>2017-12-12</td>
-                    </tr>
-                    <tr>
-                        <td>黄海</td>
-                        <td>42</td>
-                        <td>2017-12-12</td>
-                    </tr>
-                    <tr>
-                        <td>黄海</td>
-                        <td>42</td>
-                        <td>2017-12-12</td>
-                    </tr>
-                    <tr>
-                        <td>黄海</td>
-                        <td>42</td>
-                        <td>2017-12-12</td>
-                    </tr>
-                    <tr>
-                        <td>黄海</td>
-                        <td>42</td>
-                        <td>2017-12-12</td>
-                    </tr>
-                    <tr>
-                        <td>黄海</td>
-                        <td>42</td>
-                        <td>2017-12-12</td>
-                    </tr>
-                    <tr>
-                        <td>黄海</td>
-                        <td>42</td>
-                        <td>2017-12-12</td>
-                    </tr>
-                    <tr>
-                        <td>黄海</td>
-                        <td>42</td>
-                        <td>2017-12-12</td>
-                    </tr>
-                    <tr>
-                        <td>黄海</td>
-                        <td>42</td>
-                        <td>2017-12-12</td>
-                    </tr>
-                    <tr>
-                        <td>黄海</td>
-                        <td>42</td>
-                        <td>2017-12-12</td>
-                    </tr>
-                    <tr>
-                        <td>黄海</td>
-                        <td>42</td>
-                        <td>2017-12-12</td>
-                    </tr>
-                    <tr>
-                        <td>黄海</td>
-                        <td>42</td>
-                        <td>2017-12-12</td>
-                    </tr>
-                    <tr>
-                        <td>黄海</td>
-                        <td>42</td>
-                        <td>2017-12-12</td>
-                    </tr>
-                    <tr>
-                        <td>合计</td>
-                        <td colspan="2">4232</td>
-                    </tr>
-                </tbody>
+        <div class="col-md-12 tabTime">
+            收费日期：2018-04-01 至 2018-04-16
+        </div>
+        <div class="col-md-12">
+            <table class="table table-striped table-bordered" id="table2">
+                <tr>
+                   <th>所属公司</th>
+                   <th>所属分所</th> 
+                   <th>收费员</th> 
+                   <th>预存金额</th> 
+                   <th>预存扣费</th> 
+                   <th>预存退费</th> 
+                </tr>
+                {{#each this}}
+                <tr>
+                    <td>{{com}}</td>
+                    <td>{{location}}</td>
+                    <td>{{man}}</td>
+                    <td>{{money}}</td>
+                    <td>{{charge}}</td>
+                    <td>{{back}}</td>
+                </tr>
+                {{/each}}
+            </table>
+        </div>
+    </div>
+</script>
+<script type="text/x-handlebars-template" id="shouldChargeTableTpl">
+    <div class="row">
+        <div class="tabTitle col-md-12 basic">
+            收费员收费数据汇总统计表
+        </div>
+        <div class="col-md-12 tabTime">
+            收费日期：2018-04-01 至 2018-04-16
+            <span class="tabMan">收费员:黄海</span>
+        </div>
+        <div class="col-md-12">
+            <table class="table table-striped table-bordered table-hover" id="table3">
+                <tr>
+                   <th>收费日期</th>
+                   <th>结存抵扣</th> 
+                   <th>预存抵扣</th> 
+                   <th>本次结存</th> 
+                   <th>实收水费</th> 
+                   <th>营业收入</th> 
+                   <th>预存水费</th>
+                   <th>预存退费</th>
+                   <th>实收合计</th>
+                </tr>
+                {{#each this}}
+                <tr>
+                    <td>{{date}}</td>
+                    <td>{{Cdeduc}}</td>
+                    <td>{{Pdeduc}}</td>
+                    <td>{{store}}</td>
+                    <td>{{water}}</td>
+                    <td>{{bouns}}</td>
+                    <td>{{Pwater}}</td>
+                    <td>{{Bwater}}</td>
+                    <td>{{total}}</td>
+                </tr>
+                {{/each}}
             </table>
         </div>
     </div>

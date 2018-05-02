@@ -12,7 +12,7 @@ $(function(){
     },
     function (data) {
         var data = JSON.parse(data).UserData;
-
+        console.log(data)
         //用户信息数据
         var user = {
             'UserName' : data.UserName, //用户姓名
@@ -173,5 +173,8 @@ $(function(){
             console.log(num)
         }
     });
+
+
+   
 
 })
