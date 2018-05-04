@@ -2,7 +2,6 @@ $(function(){
     var currentTableTpl = Handlebars.compile($('#currentTableTpl').html());
     var preChargeTableTpl = Handlebars.compile($('#preChargeTableTpl').html());
     var shouldChargeTableTpl = Handlebars.compile($('#shouldChargeTableTpl').html());
-
     //测试数据
     var currentTableData = [
         { location : '城区营业所', cate : '居民用水', project : '基本水费', water : '45', money : '657' },
@@ -40,9 +39,46 @@ $(function(){
         {date : '2018-08-23', Cdeduc : '0.00', Pdeduc : '123.23', store : '213', water : '23', bouns : '123', Pwater : '23', Bwater : '23', total : '231'},
         {date : '总计', Cdeduc : '0.00', Pdeduc : '123.23', store : '213', water : '23', bouns : '123', Pwater : '23', Bwater : '23', total : '231'}
     ]
-    $('#currentTable').html(currentTableTpl(currentTableData));
-    $('#preChargeTable').html(preChargeTableTpl(preChargeTableData));
-    $('#shouldChargeTable').html(shouldChargeTableTpl(shouldChargeTableData))
+
+    setTimeout(function(){
+        $('#currentTable').html(currentTableTpl(currentTableData));
+        $('#preChargeTable').html(preChargeTableTpl(preChargeTableData));
+        $('#shouldChargeTable').html(shouldChargeTableTpl(shouldChargeTableData));
+
+        var width_1 = $('#contentWidth').width() - 30;
+        $('#table1 td:first-child').width(width_1*0.25);
+        $('#table1 td:nth-child(2)').width(width_1*0.25);
+        $('#table1 td:nth-child(3)').width(width_1*0.25);
+        $('#table1 td:nth-child(4)').width(width_1*0.125);
+        $('#table1 td:nth-child(5)').width(width_1*0.125);
+
+        $('#table1').tablesMergeCell({
+            cols:[0,1]
+        })
+
+        $('#table2').tablesMergeCell({
+            cols:[0,1]
+        })
+
+        $('#table2 td:first-child').width(width_1*0.2);
+        $('#table2 td:nth-child(2)').width(width_1*0.2);
+        $('#table2 td:nth-child(3)').width(width_1*0.15);
+        $('#table2 td:nth-child(4)').width(width_1*0.15);
+        $('#table2 td:nth-child(5)').width(width_1*0.15);
+        $('#table2 td:nth-child(6)').width(width_1*0.15);
+
+        $('#table3 td:first-child').width(width_1*0.2);
+        $('#table3 td:nth-child(2)').width(width_1*0.1);
+        $('#table3 td:nth-child(3)').width(width_1*0.1);
+        $('#table3 td:nth-child(4)').width(width_1*0.1);
+        $('#table3 td:nth-child(5)').width(width_1*0.1);
+        $('#table3 td:nth-child(6)').width(width_1*0.1);
+        $('#table3 td:nth-child(7)').width(width_1*0.1);
+        $('#table3 td:nth-child(8)').width(width_1*0.1);
+        $('#table3 td:nth-child(9)').width(width_1*0.1);
+
+    }, 500);
+
 
     $("#chargePaperDate1").jeDate({
         format: "YYYY-MM-DD",
@@ -53,18 +89,6 @@ $(function(){
         onClose : false
     });
 
-    $('#table1').tablesMergeCell({
-        cols:[0,1]
-    })
-
-    var width_1 = $('#table1').width();
-    $('#table1 td:first-child').width(width_1*0.25);
-    $('#table1 td:nth-child(2)').width(width_1*0.25);
-    $('#table1 td:nth-child(3)').width(width_1*0.25);
-    $('#table1 td:nth-child(4)').width(width_1*0.125);
-    $('#table1 td:nth-child(5)').width(width_1*0.125);
-
-
     $("#prestoreAnalysisDate1").jeDate({
         format: "YYYY-MM-DD",
         onClose : false
@@ -74,17 +98,6 @@ $(function(){
         onClose : false
     });
 
-    $('#table2').tablesMergeCell({
-        cols:[0,1]
-    })
-
-    $('#table2 td:first-child').width(width_1*0.2);
-    $('#table2 td:nth-child(2)').width(width_1*0.2);
-    $('#table2 td:nth-child(3)').width(width_1*0.15);
-    $('#table2 td:nth-child(4)').width(width_1*0.15);
-    $('#table2 td:nth-child(5)').width(width_1*0.15);
-    $('#table2 td:nth-child(6)').width(width_1*0.15);
-    
 
     $("#receiveAnalysisDate1").jeDate({
         format: "YYYY-MM-DD",
@@ -94,16 +107,6 @@ $(function(){
         format: "YYYY-MM-DD",
         onClose : false
     });
-
-    $('#table3 td:first-child').width(width_1*0.2);
-    $('#table3 td:nth-child(2)').width(width_1*0.1);
-    $('#table3 td:nth-child(3)').width(width_1*0.1);
-    $('#table3 td:nth-child(4)').width(width_1*0.1);
-    $('#table3 td:nth-child(5)').width(width_1*0.1);
-    $('#table3 td:nth-child(6)').width(width_1*0.1);
-    $('#table3 td:nth-child(7)').width(width_1*0.1);
-    $('#table3 td:nth-child(8)').width(width_1*0.1);
-    $('#table3 td:nth-child(9)').width(width_1*0.1);
 
     $('#dayin').click(function(){
         $('#table1').jqprint()

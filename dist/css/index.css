@@ -156,20 +156,91 @@ td{
 #table1{
   display: block;
   overflow-y: auto;
-  max-height: 600px;
+  max-height: 700px;
   border: none;
 }
 
 #table2{
   display: block;
   overflow-y: auto;
-  max-height: 600px;
+  max-height: 700px;
   border: none;
 }
 
 #table3{
   display: block;
   overflow-y: auto;
-  max-height: 600px;
+  max-height: 700px;
   border: none;
 }
+
+.loader {
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 25%;
+  max-width: 25%;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -30px;
+}
+
+#currentTable{
+    min-height: 700px;
+    position: relative;
+}
+
+#shouldChargeTable{
+    min-height: 700px;
+    position: relative;
+}
+
+#preChargeTable{
+    min-height: 700px;
+    position: relative;
+}
+
+#userData{
+  position: relative;
+  min-height: 100px;
+}
+
+#chargeInfoData{
+  min-height: 100px;
+  position: relative;
+}
+
+#totalInfoData{
+  min-height: 100px;
+  position: relative;
+}
+
+#preRecondData{
+  min-height: 200px;
+  position: relative;
+}
+
+#chargeRecondData{
+    min-height: 700px;
+    position: relative;
+}
+
+#prestoreRecondData{
+    min-height: 700px;
+    position: relative;
+}
+
+#cancelRecondData{
+    min-height: 700px;
+    position: relative;
+}
+
+

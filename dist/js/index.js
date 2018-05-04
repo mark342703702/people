@@ -4,6 +4,16 @@ $(function(){
     var chargeInfoTpl = Handlebars.compile($("#chargeInfoTpl").html());
     var totalInfoTpl = Handlebars.compile($("#totalInfoTpl").html());
     var preRecondTpl = Handlebars.compile($("#preRecondTpl").html());
+
+    var chargeRecondTpl = Handlebars.compile($("#chargeRecondTpl").html());
+    $('#chargeRecondData').html(chargeRecondTpl());
+
+    var prestoreRecondTpl = Handlebars.compile($("#prestoreRecondTpl").html());
+    $('#prestoreRecondData').html(prestoreRecondTpl());
+
+    var cancelRecondTpl = Handlebars.compile($("#cancelRecondTpl").html());
+    $('#cancelRecondData').html(cancelRecondTpl());
+
     // $('#userData').html(userTpl());
     $.getJSON("http://192.168.13.66:7778/InvokeNomalMethod?jsoncallback=?", {
         typeName: 'ChargeBussiness',
@@ -33,34 +43,61 @@ $(function(){
             return total.ShouldFee + currentValue.ShouldFee;
         })
 
+        setTimeout(function(){
+            //用户信息
+            $('#userData').html(userTpl(user));
 
-        //用户信息
-        $('#userData').html(userTpl(user));
+            //费用明细
+            $('#chargeInfoData').html(chargeInfoTpl(chargeInfo));
+            var c_width=$('.ChargeTable').width();
+            $('.ChargeTable td:first-child').width(c_width*0.1);
+            $('.ChargeTable td:nth-child(2)').width(c_width*0.2);
+            $('.ChargeTable td:nth-child(3)').width(c_width*0.1);
+            $('.ChargeTable td:nth-child(4)').width(c_width*0.15);
+            $('.ChargeTable td:nth-child(5)').width(c_width*0.2);
+            $('.ChargeTable td:nth-child(6)').width(c_width*0.15);
+            $('.ChargeTable td:nth-child(7)').width(c_width*0.2);
 
-        //费用明细
-        $('#chargeInfoData').html(chargeInfoTpl(chargeInfo));
-        var c_width=$('.ChargeTable').width();
-        $('.ChargeTable td:first-child').width(c_width*0.1);
-        $('.ChargeTable td:nth-child(2)').width(c_width*0.2);
-        $('.ChargeTable td:nth-child(3)').width(c_width*0.1);
-        $('.ChargeTable td:nth-child(4)').width(c_width*0.15);
-        $('.ChargeTable td:nth-child(5)').width(c_width*0.2);
-        $('.ChargeTable td:nth-child(6)').width(c_width*0.15);
-        $('.ChargeTable td:nth-child(7)').width(c_width*0.2);
+            //费用汇总
+            $('#totalInfoData').html(totalInfoTpl(totalInfo));
 
-        //费用汇总
-        $('#totalInfoData').html(totalInfoTpl(totalInfo));
+            //预存记录
+            $('#preRecondData').html(preRecondTpl());
+            var _width=$('.ReTable').width();
+            $('.ReTable td:first-child').width(_width*0.3);
+            $('.ReTable td:nth-child(2)').width(_width*0.3);
+            $('.ReTable td:nth-child(3)').width(_width*0.4);
+            
+            $('#chooseAll').change(function(){
+                var $this = $(this);
+                var state = $this.is(':checked');
+                if(state){
+                    $('.chargeCheckbox').prop("checked",true);
+                }else{
+                    $('.chargeCheckbox').prop("checked",false);
+                }
+            })
+    
+            $('.chargeCheckbox').change(function(){
+                var $this = $(this);
+                var stateArr = [];
+                $('.chargeCheckbox').each(function(i,e){
+                    stateArr.push($(e).is(':checked'))
+                });
+                var state= stateArr.every(function(e){
+                    return e;
+                })
+                $('#chooseAll').prop("checked",state);
+            })
+    
 
-        //预存记录
-        $('#preRecondData').html(preRecondTpl());
-        var _width=$('.ReTable').width();
-        $('.ReTable td:first-child').width(_width*0.3);
-        $('.ReTable td:nth-child(2)').width(_width*0.3);
-        $('.ReTable td:nth-child(3)').width(_width*0.4);
-
+        },500)
     });
 
-
+    //清空按钮
+    $('#empty_link').click(function(){
+        $('#preRecondData').empty();
+    })
 
     var reStoreCtx = $("#restoreChart");
     var waterCtx = $("#waterRentChart");
@@ -173,8 +210,5 @@ $(function(){
             console.log(num)
         }
     });
-
-
-   
 
 })
