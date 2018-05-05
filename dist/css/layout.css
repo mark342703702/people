@@ -48,6 +48,29 @@
         line-height: 60px;
       }
 
+      .nav .nav_admin{
+        height: 100%;
+        width: 200px;
+        position: absolute;
+        top: 0px;
+        right: 30px;
+      }
+
+      .admin_name{
+        color: #fff;
+        height: 100%;
+        line-height: 60px;
+        float: right;
+      }
+
+      .admin_logo{
+        height: 100%;
+        width: 16px;
+        background: url('../images/logout.png') no-repeat center;
+        float: right;
+        margin-left: 10px;
+        cursor: pointer;
+      }
       
 
 .tab-content {
