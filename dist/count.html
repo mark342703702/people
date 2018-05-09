@@ -152,7 +152,7 @@
             收费日报表
         </div>
         <div class="col-md-12 tabTime">
-            收费日期：2018-04-01 至 2018-04-16<input type="button" value="打印" id="dayin"/>
+            收费日期：2018-04-01 至 2018-04-16
             <span class="tabMan">收费员:黄海</span>
         </div>
         <div class="col-md-12">
@@ -166,11 +166,11 @@
                 </tr>
                 {{#each this}}
                 <tr>
-                    <td>{{location}}</td>
-                    <td>{{cate}}</td>
-                    <td>{{project}}</td>
-                    <td>{{water}}</td>
-                    <td>{{money}}</td>
+                    <td>{{SonCompanyName}}</td>
+                    <td>{{UserType}}</td>
+                    <td>{{ChargeItem}}</td>
+                    <td>{{WaterValue}}</td>
+                    <td>{{WaterMoney}}</td>
                 </tr>
                 {{/each}}
             </table>
@@ -193,16 +193,14 @@
                    <th>收费员</th> 
                    <th>预存金额</th> 
                    <th>预存扣费</th> 
-                   <th>预存退费</th> 
                 </tr>
                 {{#each this}}
                 <tr>
-                    <td>{{com}}</td>
-                    <td>{{location}}</td>
-                    <td>{{man}}</td>
-                    <td>{{money}}</td>
-                    <td>{{charge}}</td>
-                    <td>{{back}}</td>
+                    <td>思源供水有限公司</td>
+                    <td>{{SonCompanyName}}</td>
+                    <td>{{EmployeeName}}</td>
+                    <td>{{OIn}}</td>
+                    <td>{{Out}}</td>
                 </tr>
                 {{/each}}
             </table>

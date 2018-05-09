@@ -6,15 +6,11 @@ $(function(){
     var preRecondTpl = Handlebars.compile($("#preRecondTpl").html());
 
     var chargeRecondTpl = Handlebars.compile($("#chargeRecondTpl").html());
-    $('#chargeRecondData').html(chargeRecondTpl());
 
     var prestoreRecondTpl = Handlebars.compile($("#prestoreRecondTpl").html());
-    $('#prestoreRecondData').html(prestoreRecondTpl());
 
     var cancelRecondTpl = Handlebars.compile($("#cancelRecondTpl").html());
-    $('#cancelRecondData').html(cancelRecondTpl());
 
-    // $('#userData').html(userTpl());
     $.getJSON("http://192.168.13.66:7778/InvokeNomalMethod?jsoncallback=?", {
         typeName: 'ChargeBussiness',
         fucName: 'GetUserWaterFee',
@@ -22,7 +18,6 @@ $(function(){
     },
     function (data) {
         var data = JSON.parse(data).UserData;
-        console.log(data)
         //用户信息数据
         var user = {
             'UserName' : data.UserName, //用户姓名
@@ -36,12 +31,8 @@ $(function(){
 
         //费用汇总数据
         var totalInfo = {
-            'OwnFee' : data.OwnFee,
-            'shouldFeetotal' : 0
-        }
-        totalInfo.shouldFeetotal = chargeInfo.reduce(function(total,currentValue){
-            return total.ShouldFee + currentValue.ShouldFee;
-        })
+            'OwnFee' : data.OwnFee
+        };
 
         setTimeout(function(){
             //用户信息
@@ -49,6 +40,7 @@ $(function(){
 
             //费用明细
             $('#chargeInfoData').html(chargeInfoTpl(chargeInfo));
+
             var c_width=$('.ChargeTable').width();
             $('.ChargeTable td:first-child').width(c_width*0.1);
             $('.ChargeTable td:nth-child(2)').width(c_width*0.2);
@@ -89,67 +81,127 @@ $(function(){
                 })
                 $('#chooseAll').prop("checked",state);
             })
-    
+
+            $('#getMoney').click(function(e){
+                e.stopPropagation();
+                var json = {
+                        "userID" : 2,
+                        "prestoreMoney" : 100,
+                        "copyIDList"  : "596",
+                        "paymentTypeID" : 1,
+                        "operatorID"  :  1,
+                        "remark" : "5961111"
+                };
+                $.getJSON("http://192.168.13.66:7778/InvokeNomalMethod?jsoncallback=?", {
+                    typeName: 'ChargeBussiness',
+                    fucName: 'doCharge',
+                    jsonParas: JSON.stringify(json)
+                },function(data){
+                    console.log(JSON.parse(data))
+                })
+            })
+
+            var reStoreCtx = $("#restoreChart");
+            var waterCtx = $("#waterRentChart");
+            var SubWaterTypeList = data.SubWaterTypeList;
+            var reStoreCtxData = [];
+            var reStoreCtxTitle = [];
+            SubWaterTypeList.map(function(e){
+                reStoreCtxData.push(e.CountMoney);
+                reStoreCtxTitle.push(e.CategoryName)
+            });
+           
+            var reStoreChart = new Chart(reStoreCtx, {
+                type : 'pie',
+                data : {
+                    datasets: [{
+                        data: reStoreCtxData,
+                        backgroundColor : [
+                            'rgba(105,105,105,0.5)',
+                            'rgba(255,140,0,0.5)',
+                            'rgba(135,206,235,0.5)'
+                        ],
+                        borderColor:[
+                            'rgba(105,105,105, 1)',
+                            'rgba(255,140,0, 1)',
+                            'rgba(135,206,235, 1)'
+                        ],
+                        borderWidth : 1
+                    }],        
+                    labels:reStoreCtxTitle
+                }
+            });
+
+            var SubPrestoreList = data.SubPrestoreList;
+            var waterCtxData = [];
+            var waterCtxTitle = [];
+            SubPrestoreList.map(function(e){
+                waterCtxTitle.push(e.PaySiteName);
+                waterCtxData.push(e.CountMoney);
+            })
+            var waterChart = new Chart(waterCtx, {
+                type : 'pie',
+                data : {
+                    datasets: [{
+                        data: waterCtxData,
+                        backgroundColor : [
+                            'rgba(178,34,34,0.5)',
+                            'rgba(30,144,255,0.5)',
+                            'rgba(60,179,113,0.5)',
+                        ],
+                        borderColor:[
+                            'rgba(178,34,34,1)',
+                            'rgba(30,144,255,1)',
+                            'rgba(60,179,113,1)'
+                        ],
+                        borderWidth : 1
+                    }],        
+                    labels: waterCtxTitle
+                }
+        
+            });
 
         },500)
     });
+
+    $.getJSON("http://192.168.13.66:7778/InvokeNomalMethod?jsoncallback=?", {
+            typeName : 'ChargeBussiness',
+            fucName : 'getChargeList',
+            jsonParas : ''
+    },
+    function(data){
+        var data = JSON.parse(data).UserData;
+        $('#chargeRecondData').html(chargeRecondTpl(data));
+
+    });
+
+    $.getJSON("http://192.168.13.66:7778/InvokeNomalMethod?jsoncallback=?", {
+            typeName : 'ChargeBussiness',
+            fucName : 'getPrestoreList',
+            jsonParas : ''
+    },
+    function(data){
+        var data = JSON.parse(data).UserData;
+        $('#prestoreRecondData').html(prestoreRecondTpl(data));
+    });
+
+    $.getJSON("http://192.168.13.66:7778/InvokeNomalMethod?jsoncallback=?", {
+            typeName : 'ChargeBussiness',
+            fucName : 'getCancelChargeList',
+            jsonParas : ''
+    },
+    function(data){
+        var data = JSON.parse(data).UserData;
+        $('#cancelRecondData').html(cancelRecondTpl(data));
+    });
+    
+
+
 
     //清空按钮
     $('#empty_link').click(function(){
         $('#preRecondData').empty();
     })
-
-    var reStoreCtx = $("#restoreChart");
-    var waterCtx = $("#waterRentChart");
-    var reStoreChart = new Chart(reStoreCtx, {
-        type : 'pie',
-        data : {
-            datasets: [{
-                data: [16, 23, 10],
-                backgroundColor : [
-                    'rgba(105,105,105,0.5)',
-                    'rgba(255,140,0,0.5)',
-                    'rgba(135,206,235,0.5)'
-                ],
-                borderColor:[
-                    'rgba(105,105,105, 1)',
-                    'rgba(255,140,0, 1)',
-                    'rgba(135,206,235, 1)'
-                ],
-                borderWidth : 1
-            }],        
-            labels: [
-                '污染费',
-                '垃圾处理费',
-                '水费'
-            ]
-        }
-    });
-    var waterChart = new Chart(waterCtx, {
-        type : 'pie',
-        data : {
-            datasets: [{
-                data: [10, 20, 30],
-                backgroundColor : [
-                    'rgba(178,34,34,0.5)',
-                    'rgba(30,144,255,0.5)',
-                    'rgba(60,179,113,0.5)',
-                ],
-                borderColor:[
-                    'rgba(178,34,34,1)',
-                    'rgba(30,144,255,1)',
-                    'rgba(60,179,113,1)'
-                ],
-                borderWidth : 1
-            }],        
-            labels: [
-                '现金预存',
-                '微信支付',
-                '银行转账'
-            ]
-        }
-
-    });
     
     $("#chargeRecondDate1").jeDate({
         format: "YYYY-MM-DD"
