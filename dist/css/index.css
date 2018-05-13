@@ -27,19 +27,19 @@
     text-align: left;
     width: 50%;
     float: left;
-    padding: 5px 8px; }
+    padding: 4px 8px; }
   #prestore .basic .receipts {
     margin-top: 15px; }
   #prestore .basic .panel {
-    margin-bottom: 15px; }
+    margin-bottom: 0px; }
   #prestore .basic .Htbody {
     display: block;
-    max-height: 310px;
+    height: 218px;
     overflow-y: auto;
     position: relative; }
   #prestore .basic .Ctbody {
     display: block;
-    max-height: 286px;
+    max-height: 198px;
     overflow-y: auto;
     position: relative; }
 
@@ -92,10 +92,10 @@ h4 {
   font-weight: bold; }
 
 .title {
-  font-size: 20px; }
+  font-size: 16px; }
 
 .text {
-  font-size: 20px; }
+  font-size: 16px; }
 
 .title_16 {
   font-size: 16px; }
@@ -214,8 +214,8 @@ td{
 }
 
 #chargeInfoData{
-  min-height: 100px;
   position: relative;
+  height: 240px;
 }
 
 #totalInfoData{
@@ -224,8 +224,8 @@ td{
 }
 
 #preRecondData{
-  min-height: 200px;
   position: relative;
+  height: 260px;
 }
 
 #chargeRecondData{
@@ -243,4 +243,7 @@ td{
     position: relative;
 }
 
-
+#yuncun{
+    background: url(../images/money.png) no-repeat 0px center;
+    padding-left:20px;
+}

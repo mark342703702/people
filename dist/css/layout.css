@@ -9,7 +9,7 @@
     padding-top: 30px;
     box-sizing: border-box;
     display: block;
-    width: 916px; }
+    width: 700px; }
     .nav .nav_content .nav_link_item {
       width: 130px;
       height: 30px;
@@ -139,3 +139,8 @@
 
 .jedateblue .daybox .arthead .ymbtn:hover {
   background-color: #6d9add !important; }
+
+  body{
+    overflow-x:hidden;
+    overflow-y: hidden;
+  }
