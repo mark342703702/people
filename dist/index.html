@@ -248,17 +248,17 @@
 </script>
 <script type="text/x-handlebars-template" id="totalInfoTpl">
     <div class="row">
-        <div class="col-md-6 textLeft">
+        <div class="col-md-7 textLeft">
             <b class="title">欠费合计:</b>
             <span class="text">{{OwnFee}}</span>
         </div>
-        <div class="col-md-6 textLeft">
+        <div class="col-md-5 textLeft">
             <b class="title">应收金额:</b>
             <span class="text red">{{OwnFee}}</span>
         </div>
     </div>
     <div class="row receipts">
-        <div class="col-md-6 textLeft">
+        <div class="col-md-7 textLeft">
             <form class="form-inline">
                 <div class="form-group">
                     <label for="receipts" class="title">实收金额：</label>
@@ -266,9 +266,9 @@
                 </div>
             </form>
         </div>
-        <div class="col-md-6 textLeft">
+        <div class="col-md-5 textLeft">
             <button type="button" class="btn btn-primary" id="getMoney">收费</button>
-            <button type="button" class="btn btn-success">打印</button>
+            <button type="button" class="btn btn-success" id="getPrint">打印</button>
         </div>
     </div>
 </script>
@@ -279,6 +279,16 @@
                 <th>用户名称</th>
                 <th>预存金额</th>
                 <th>时间</th>
+            </tr>
+            <tr>
+                <td>黄海</td>
+                <td>42</td>
+                <td>2017-12-12</td>
+            </tr>
+            <tr>
+                <td>黄海</td>
+                <td>42</td>
+                <td>2017-12-12</td>
             </tr>
             <tr>
                 <td>黄海</td>
